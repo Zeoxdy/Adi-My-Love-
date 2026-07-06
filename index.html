@@ -3,216 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Adi ❤️</title>
+<title>For Her ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#fff0f3,#ffe6ea);
-overflow:hidden;
+    background:linear-gradient(to bottom,#08111f,#0f172a,#1e293b);
+    color:white;
+    font-family:'Caveat',cursive;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    height:100vh;
+    overflow:hidden;
+    text-align:center;
+    position:relative;
 }
 
-.page{
-position:absolute;
-width:100%;
-height:100vh;
-display:none;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:30px;
+/* Animated stars */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+    background-size:40px 40px;
+    opacity:.15;
+    animation:stars 25s linear infinite;
 }
 
-.active{
-display:flex;
+@keyframes stars{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-100px);
+    }
 }
 
-h1{
-font-family:'Great Vibes',cursive;
-font-size:4rem;
-color:#ff4d6d;
-margin-bottom:20px;
-}
-
-p{
-max-width:700px;
-font-size:1.2rem;
-color:#5a2d41;
-line-height:1.8;
-}
-
-.btn{
-margin-top:30px;
-padding:15px 35px;
-border:none;
-border-radius:50px;
-background:#ff4d6d;
-color:white;
-font-size:1rem;
-cursor:pointer;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-.no-btn{
-background:white;
-color:#444;
-margin-left:10px;
-position:relative;
-}
-
+/* Floating hearts */
 .heart{
-position:fixed;
-font-size:25px;
-pointer-events:none;
-animation:float 7s linear infinite;
+    position:absolute;
+    font-size:22px;
+    opacity:.3;
+    animation:floatUp 12s linear infinite;
+    pointer-events:none;
 }
 
-@keyframes float{
-0%{
-transform:translateY(100vh);
-opacity:1;
+@keyframes floatUp{
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.35;
+    }
+
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
 }
-100%{
-transform:translateY(-120vh);
-opacity:0;
+
+#text{
+    width:90%;
+    max-width:900px;
+    font-size:clamp(2.2rem,5vw,3.5rem);
+    line-height:1.3;
+    z-index:5;
+    transition:all .6s ease;
+    text-shadow:0 0 12px rgba(255,255,255,.12);
+    padding:20px;
 }
+
+button{
+    padding:14px 36px;
+    font-size:1.8rem;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:#ff4d6d;
+    color:white;
+    display:none;
+    margin-top:20px;
+    font-family:'Caveat',cursive;
+    box-shadow:0 0 20px rgba(255,77,109,.5);
+    z-index:5;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
 }
 </style>
 </head>
 <body>
 
-<div class="page active">
-<h1>Hey Adi 💕</h1>
-<p>
-I prepared something special for you...
-</p>
-<button class="btn" onclick="nextPage()">Continue ❤️</button>
-</div>
+<div class="heart" style="left:8%;animation-delay:0s;">❤️</div>
+<div class="heart" style="left:20%;animation-delay:3s;">❤️</div>
+<div class="heart" style="left:35%;animation-delay:5s;">❤️</div>
+<div class="heart" style="left:50%;animation-delay:1s;">❤️</div>
+<div class="heart" style="left:65%;animation-delay:4s;">❤️</div>
+<div class="heart" style="left:80%;animation-delay:2s;">❤️</div>
+<div class="heart" style="left:92%;animation-delay:6s;">❤️</div>
 
-<div class="page">
-<h1>✨</h1>
-<p>
-It's honestly crazy how two people met through a screen
-and somehow became so important to each other.
-</p>
-<button class="btn" onclick="nextPage()">Continue ❤️</button>
-</div>
+<div id="text"></div>
 
-<div class="page">
-<h1>Why You Matter To Me ❤️</h1>
-<p>
-✨ You make my days better.<br><br>
-✨ I always look forward to your messages.<br><br>
-✨ You make me smile when I least expect it.<br><br>
-✨ You're simply Adi, and that's enough.
-</p>
-<button class="btn" onclick="nextPage()">Continue ❤️</button>
-</div>
-
-<div class="page">
-<h1>❤️</h1>
-<p>
-And if life is kind to us...
-<br><br>
-I'd love to witness the most beautiful transition of all.
-<br><br>
-From Adi Troka
-<br>
-to
-<br>
-Adi Romanov ❤️
-</p>
-<button class="btn" onclick="nextPage()">Continue ❤️</button>
-</div>
-
-<div class="page">
-<h1>One Last Question 💖</h1>
-<p>
-Will you be mine?
-</p>
-
-<div>
-<button class="btn" onclick="sayYes()">YES 💘</button>
-<button class="btn no-btn" id="noBtn">NO 😤</button>
-</div>
-</div>
-
-<div class="page" id="finalPage">
-<h1>❤️</h1>
-
-<p>
-You just made me the happiest person alive.
-<br><br>
-Thank you for every conversation,
-every smile,
-and every moment we've shared.
-<br><br>
-I love you, Adi ❤️
-<br><br>
-— Rezin
-</p>
-</div>
+<button id="yesBtn">❤️ Yes ❤️</button>
 
 <script>
 
-let current=0;
-const pages=document.querySelectorAll('.page');
+const lines = [
+"Hey Bestiee...",
+"I wanna tell u something.",
+"It started with a conversation.",
+"Just a normal one.",
+"But somehow...",
+"Talking to you became my favorite part of the day.",
+"The good days became better.",
+"The bad days felt easier.",
+"And without realizing it...",
+"You became my favorite notification.",
+"❤️",
+"Then I learned something about swans.",
+"🦢 🦢",
+"They usually travel in pairs.",
+"They stay beside the one they choose.",
+"Through calm waters.",
+"Through rough waters.",
+"And maybe...",
+"That's what made me think of you.",
+"So...",
+"I was wondering...",
+"If one day...",
+"You'd choose to stay beside me too.",
+"❤️",
+"Will You Be My Swan? 🦢❤️"
+];
 
-function nextPage(){
-pages[current].classList.remove('active');
-current++;
-pages[current].classList.add('active');
+let i = 0;
+const text = document.getElementById("text");
+
+function showText(){
+
+    if(i < lines.length){
+
+        text.style.opacity = 0;
+
+        setTimeout(() => {
+
+            text.innerHTML = lines[i];
+
+            if(lines[i].includes("Will You Be My Swan")){
+                text.style.fontSize = "clamp(3rem,8vw,5rem)";
+                text.style.color = "#ffd6e0";
+            }else{
+                text.style.fontSize = "clamp(2.2rem,5vw,3.5rem)";
+                text.style.color = "white";
+            }
+
+            text.style.opacity = 1;
+            i++;
+
+        }, 500);
+
+        setTimeout(showText, 3400);
+
+    }else{
+
+        document.getElementById("yesBtn").style.display = "inline-block";
+
+    }
 }
 
-function sayYes(){
+showText();
 
-pages[current].classList.remove('active');
-document.getElementById('finalPage').classList.add('active');
+document.getElementById("yesBtn").onclick = () => {
 
-for(let i=0;i<120;i++){
+document.body.innerHTML = `
+<div style="
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:'Caveat',cursive;
+background:linear-gradient(to bottom,#08111f,#0f172a,#1e293b);
+color:white;
+text-align:center;
+">
 
-let heart=document.createElement('div');
+<div style="font-size:5rem;">❤️</div>
 
-heart.className='heart';
-heart.innerHTML='❤️';
+<div style="
+font-size:clamp(3rem,8vw,6rem);
+text-shadow:0 0 25px pink;
+margin-top:10px;
+">
+YAYYYYY 😭❤️
+</div>
 
-heart.style.left=Math.random()*100+'vw';
-heart.style.animationDuration=(Math.random()*4+3)+'s';
+<div style="
+font-size:clamp(2rem,5vw,3rem);
+margin-top:20px;
+">
+You are officially my Swan 🦢❤️
+</div>
 
-document.body.appendChild(heart);
+</div>
+`;
 
-setTimeout(()=>{
-heart.remove();
-},7000);
-
-}
-}
-
-const noBtn=document.getElementById('noBtn');
-
-noBtn.addEventListener('mouseover',()=>{
-
-const x=Math.random()*500-250;
-const y=Math.random()*300-150;
-
-noBtn.style.transform=`translate(${x}px,${y}px)`;
-
-});
+};
 
 </script>
 
 </body>
 </html>
-```
